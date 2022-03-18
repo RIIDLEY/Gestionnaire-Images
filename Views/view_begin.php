@@ -5,9 +5,13 @@
 <style>
 table, th, td {
   border: 1px solid black;
-  border-collapse: none;
   padding: 1em;
   margin: 1em;
+  border-radius: 1em;
+}
+
+body {
+ 
 }
 </style>
 	<body>

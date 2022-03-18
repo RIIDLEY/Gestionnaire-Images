@@ -13,7 +13,7 @@ foreach($tab as $ligne)://Affiche les données present dans le tableau donné pa
     <center>
     <table>
         <td>
-       <center><img src="Upload/<?=$ligne['filename']?>" width="250" height="auto" ></center> 
+       <center><img class="rounded" src="Upload/<?=$ligne['filename']?>" width="250" height="auto" ></center> 
         <p> Titre : <?=$ligne['name']?> | Poid : <?=$ligne['size']?> octets | Type : <?=$ligne['type']?></p>
         </td>
     </table>
@@ -70,20 +70,20 @@ if ($_GET['page']<$nbPage) {//mise en place du bouton suivant
 
 
 ?>
-    <p>Téléverser une image :</p>
-<table>
-<td>
+
+<p>Téléverser une image :</p>
+<div class="rounded" style="background-color: orange; max-width: 500px; margin: auto; padding:10px; border:     1px solid black" >
+
     <form action = "?controller=home&action=upload" method="post" enctype="multipart/form-data">
    <label >Format accepté : JPEG, PNG, JPG et GIF | Taille max : 2MB</label><br>
             <input type="file" name="fichier" accept="image/png, image/jpeg, image/jpg, image/gif"> <!-- Accept uniquement des png jpeg jpg et gif -->
-			<input type="submit" value="Envoyer"/>
+			<input type="submit" value="Envoyer" class="btn btn-success"/>
     </form>
-</td>
 
-</table>
-
-
+</div>
 </center>
+
+
 <p>Par Lahoucine HAMSEK</p>
 <?php
 require('view_end.php');
