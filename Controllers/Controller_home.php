@@ -16,29 +16,39 @@ class Controller_home extends Controller{
   public function action_upload(){
     $maxsize = 2097152;
     
-    if(!empty($_FILES['fichier']))
+    if(!empty($_FILES['fichier']))//s'il y'a un fichier en parametre
     {
-      if(($_FILES['fichier']['size'] >= $maxsize) || ($_FILES["fichier"]["size"] == 0)) {// si la taille du fichier est superieur à 2MB
-        echo('<script type="text/javascript">alert("Le fichier est trop gros (> 2MB)")</script>');
-        echo("<script>window.location = 'index.php';</script>");
-      }else{
-        $tmp_nom = $_FILES['fichier']['tmp_name'];
-        $name = $_FILES['fichier']['name'];
-        $tmp = explode(".", $name);
-        $type = end($tmp);
-        $random = rand(1, 15000);
+      $tmp_nom = $_FILES['fichier']['tmp_name'];
+      $name = $_FILES['fichier']['name'];
+      $tmp = explode(".", $name);
+      $type = end($tmp);
+      $extensionValide = array("png", "jpg", "jpeg", "gif");
 
-        if (move_uploaded_file($tmp_nom, 'Upload/'.$random."-".$name)){//ajoute le fichier à dossier de stockage du serveur)
-          $m = Model::getModel();//recupere le modele (la base de données) 
-          $info = ['name'=>(explode(".", $name))[0],'filename'=>$random."-".$name,'type'=>$type,'size'=>intval($_FILES["fichier"]["size"])];
-          $m->addNewFile($info);//ajoute le fichier à la BDD
-          echo '<script type="text/javascript">alert("Le fichier a bien été upload")</script>';//met une pop up
+      if (in_array($type,$extensionValide)) {
+
+        if(($_FILES['fichier']['size'] >= $maxsize) || ($_FILES["fichier"]["size"] == 0)) {// si la taille du fichier est superieur à 2MB
+          echo('<script type="text/javascript">alert("Le fichier est trop gros (> 2MB)")</script>');
           echo("<script>window.location = 'index.php';</script>");
+        }else{
+  
+          $random = rand(1, 15000);
+
+          if (move_uploaded_file($tmp_nom, 'Upload/'.$random."-".$name)){//ajoute le fichier à dossier de stockage du serveur)
+            $m = Model::getModel();//recupere le modele (la base de données) 
+            $info = ['name'=>(explode(".", $name))[0],'filename'=>$random."-".$name,'type'=>$type,'size'=>intval($_FILES["fichier"]["size"])];
+            $m->addNewFile($info);//ajoute le fichier à la BDD
+            echo '<script type="text/javascript">alert("Le fichier a bien été upload")</script>';//met une pop up
+            echo("<script>window.location = 'index.php';</script>");
+          }else {
+            echo '<script type="text/javascript">alert("Une erreur est survenue lors de l\'upload")</script>';//met une pop up
+            echo("<script>window.location = 'index.php';</script>");
+          }
         }
+      }else {
+        echo '<script type="text/javascript">alert("Ce type de fichier n\'est pas accepté. Seulement les jpeg, jpg, png et gif sont autorisé")</script>';//met une pop up
+        echo("<script>window.location = 'index.php';</script>");
       }
-    }else{
     }
-    //$this->action_default();//redirige vers la page principale
   }
 }
 
