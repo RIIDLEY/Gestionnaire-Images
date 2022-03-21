@@ -22,7 +22,7 @@ class Controller_home extends Controller{
       $name = $_FILES['fichier']['name'];
       $tmp = explode(".", $name);
       $type = end($tmp);
-      $extensionValide = array("png", "jpg", "jpeg", "gif");
+      $extensionValide = array("png", "jpg", "jpeg", "gif", "jfif");
 
       if (in_array($type,$extensionValide)) {
 
@@ -50,6 +50,11 @@ class Controller_home extends Controller{
       }
     }
   }
+
+  public function action_lectureFolder(){
+    
+  }
+
 }
 
 ?>
