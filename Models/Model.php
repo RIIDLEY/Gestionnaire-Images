@@ -62,7 +62,7 @@ class Model
     {
         $debut = ($numeropage-1)*4;
         try {
-            $req = $this->bd->prepare('SELECT * FROM fichiers_upload LIMIT :debut,4');
+            $req = $this->bd->prepare('SELECT * FROM fichiers_upload ORDER BY id DESC LIMIT :debut,4');
             $req->bindValue(':debut', $debut, PDO::PARAM_INT);
             $req->execute();
             return $req->fetchall();

@@ -72,7 +72,7 @@ if ($_GET['page']<$nbPage) {//mise en place du bouton suivant
 ?>
 
 <p>Téléverser une image :</p>
-<div class="rounded" style="background-color: orange; max-width: 500px; margin: auto; padding:10px; border:     1px solid black" >
+<div class="rounded upload" >
 
     <form action = "?controller=home&action=upload" method="post" enctype="multipart/form-data">
    <label >Format accepté : JPEG, PNG, JPG et GIF | Taille max : 2MB</label><br>

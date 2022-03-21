@@ -1,0 +1,14 @@
+table, th, td {
+    border: 1px solid black;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+  }
+
+.upload{
+    background-color: orange;
+    max-width: 20%;
+    margin: auto;
+    padding: 10px;
+    border:  1px solid black;
+}
