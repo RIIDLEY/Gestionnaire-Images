@@ -3,7 +3,6 @@ require('view_begin.php');
 ?>
 <center>
 <div class="grandeDivData">
-
     <?php 
     $i=0;
     echo "<tr>";
@@ -105,7 +104,8 @@ require('view_begin.php');
     <div class="divtools-right">
         <div>
             <br>
-            <input type="button" class="scan" value="Scan">
+            <!-- Bouton qui permet de lancer le scan du dossier -->
+            <a href="?controller=home&action=lectureFolder" class="btn btn-primary btn-lg scan">Scan</a>
         </div>
     </div>
 

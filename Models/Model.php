@@ -91,4 +91,21 @@ class Model
         }
         
     }
+
+    public function VerifInDB($filename){//verifie si l'image est deja présente sur la BDD
+        $EstDansLaDB = false;
+        try {
+            $req = $this->bd->prepare('SELECT * FROM fichiers_upload WHERE filename = :filename');
+            $req->bindValue(':filename', $filename);
+            $req->execute();
+            $resultat = $req->fetchall();
+
+            if(!empty($resultat)){
+                $EstDansLaDB = true;
+            }
+            return $EstDansLaDB;
+        } catch (PDOException $e) {
+            die('Echec VerifInDB, erreur n°' . $e->getCode() . ':' . $e->getMessage());
+        }  
+    }
 }
