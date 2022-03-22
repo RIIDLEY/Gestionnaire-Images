@@ -14,9 +14,9 @@ J'ai utilisé WAMP pour travailler sur ce projet.
 
 Il faut créer un nouvelle utilisateur MySQL/MariaDB avec comme login : "hypermedia-hamsek" et comme mot de passe : "@x/t3F4chrzpwQDY"  
 Par la suite lancez le script SQL DB.sql qui se trouve dans le dossier Utils.  
-Il permet de créer la base de données ainsi que la table nécessaire pour le systeme de pagination.  
+Il permet de créer la base de données ainsi que la table nécessaire.  
 Ensuite vous pouvez mettre le dossier contenant le site dans votre dossier qui permet de le lancer avec Apache.  
-Allez sur votre navigateur Web, puis à l'adresse localhost/Hypermedia-HAMSEK pour avoir accès au systeme de pagination que j'ai réalisé.  
+Allez sur votre navigateur Web, puis à l'adresse localhost/Hypermedia-HAMSEK pour avoir accès au systeme que j'ai réalisé.  
 
 ## Brique 1 : Pagination
 
