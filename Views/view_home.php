@@ -9,7 +9,7 @@ require('view_begin.php');
     foreach($tab as $ligne)://Affiche les données present dans le tableau donné par le controller ?>
 
         <div class="divdata rounded">
-            <center><img class="rounded" src="Upload/<?=$ligne['filename']?>" width="auto" height="250" style="padding:10px"></center>
+            <center><img class="rounded zoom" src="Upload/<?=$ligne['filename']?>" width="auto" height="250" style="padding:10px"></center>
             <p> Titre : <?=$ligne['name']?> | Poid : <?=$ligne['size']?> octets | Type : <?=$ligne['type']?></p>
         </div>
 

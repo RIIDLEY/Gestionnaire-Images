@@ -59,6 +59,8 @@ class Controller_home extends Controller{
   public function action_lectureFolder(){
     $path= "docs";
     $this->explorerDir($path);//Appel la fonction
+    echo '<script type="text/javascript">alert("Le dossier a bien été scanné")</script>';//met une pop up qui finalisé le scan
+    echo("<script>window.location = 'index.php';</script>");
   }
 
   function explorerDir($path){
@@ -97,8 +99,6 @@ class Controller_home extends Controller{
       }
     }
     closedir($folder);
-    echo '<script type="text/javascript">alert("Le dossier a bien été scanné")</script>';//met une pop up qui finalisé le scan
-    echo("<script>window.location = 'index.php';</script>");
   }
 
 }
