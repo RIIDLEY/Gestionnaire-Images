@@ -18,16 +18,16 @@ Il permet de créer la base de données ainsi que la table nécessaire pour le s
 Ensuite vous pouvez mettre le dossier contenant le site dans votre dossier qui permet de le lancer avec Apache.  
 Allez sur votre navigateur Web, puis à l'adresse localhost/Hypermedia-HAMSEK pour avoir accès au systeme de pagination que j'ai réalisé.  
 
-## Brique 1: Pagination
+## Brique 1 : Pagination
 
 Un système de pagination a été installé afin de naviguer entre les images présentes sur le serveur. Ce système permet d'affiche 4 images par page.
 
-## Brique 2: Upload
+## Brique 2 : Upload
 
 Un utilisateur a la possibilité de téléverser une image. Cette image sera ensuite téléversée vers le dossier de stockage du serveur et référencée sur la base de données.
 Une image ne peut pas être téléversé plus d'une fois.
 
-## Brique 4: Lecture Récursive
+## Brique 3 : Lecture Récursive
 
 Un bouton "Scan" est présent sur le site web. Il permet de lire l’ensemble des images dans le dossier et sous dossiers possibles.
 Ces images sont ensuite téléversées vers le dossier de stockage du serveur et référencées sur la base de données.
