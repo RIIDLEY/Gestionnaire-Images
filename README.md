@@ -1,4 +1,4 @@
-# Hypermedia de Lahoucine HAMSEK
+# Gestionnaire d'image de Lahoucine HAMSEK
 ***
 
 L'objectif de ce projet est de réaliser différentes briques de codes récurrentes dans la création d'un outil hypermedia.
